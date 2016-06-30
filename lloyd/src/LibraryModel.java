@@ -1,23 +1,30 @@
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 
 public class LibraryModel {
     private ArrayList checkedInBooks = new ArrayList();
 
+    // getter for checkedInBooks attribute (is that the same thing as a property?)
     public ArrayList getCheckedInBooks() {
         return checkedInBooks;
     }
 
-    public void setCheckedInBooks(ArrayList checkedInBooks) {
-        this.checkedInBooks = checkedInBooks;
+    public Collection getBooks(){
+        return checkedInBooks;
     }
 
-    public LibraryModel(LibraryBook book1,LibraryBook book2,LibraryBook book3,LibraryBook book4,LibraryBook book5 ){
+    // Do I need something like this?
+    public ArrayList getBookTitles(){
+        return checkedInBooks;
+    }
 
+    // default constructor
+    public LibraryModel(LibraryBook... setOfBooks){
+        Collections.addAll(checkedInBooks, setOfBooks);
     }
 
     public LibraryBook checkOutBook(LibraryBook book){
-        // if checkedInBooks.contains(book)?
         if(book.isCheckedIn()) {
             checkedInBooks.remove(book);
             book.setCheckedIn(false);
@@ -37,8 +44,5 @@ public class LibraryModel {
         return book;
     }
 
-    public Collection getBooks(){
-        return checkedInBooks;
-    }
 
 }

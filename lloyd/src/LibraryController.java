@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class LibraryController {
     private LibraryModel libraryModel;
 
+    // default constructor
     public LibraryController(){
         LibraryBook theWumpWorld = new LibraryBook(48, "The Wump World", "1981", true);
         LibraryBook theCabooseWhoGotLoose = new LibraryBook(48, "The Caboose Who Got Loose", "1980", true);
@@ -19,6 +20,11 @@ public class LibraryController {
 
     public int getBookCount(){
         return libraryModel.getBooks().size();
+    }
+
+    public ArrayList getBookTitles(){
+        return libraryModel.getBookTitles().title; // I think this is the general idea. How do I return the friggin' titles here?
+        // Is this even on the right track?
     }
 
     // Is this the direction I should go when checking books in and out?
