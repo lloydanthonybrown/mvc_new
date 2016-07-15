@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class LibraryView {
     private LibraryController libraryController;
 
@@ -7,13 +9,17 @@ public class LibraryView {
 
     public static void main(String[] args) {
         LibraryView mainLibraryView = new LibraryView();
+        ArrayList showAllBooks = mainLibraryView.libraryController.getBooks();
 
         System.out.println("We currently have " + mainLibraryView.libraryController.getBookCount() + " books in the library.");
-        // This currently returns the actual objects, rather than the title of those objects. Hmm.
-        System.out.println("We currently have these books checked in at the library: " + mainLibraryView.libraryController.getBooks());
-        // Do I need a different constructor in my controller to get this to work?
-        // This is printing off a reference to my LibraryController. What the crap?
-        System.out.println("We currently have these books checked in at the library: " + mainLibraryView.libraryController.toString());
+
+        // Do a for loop here to go through my books and display them in a pretty way.
+        System.out.println("The books in the library are: ");
+        for (int i=0; i < showAllBooks.size(); i++) {
+            System.out.println(showAllBooks.get(i));
+        }
+
+        System.out.println("Another view: " + mainLibraryView.libraryController.getBooks());
 
         // check out a book
         // print out the checked in books to verify that it was successfully removed from the list of books checked in.
@@ -21,5 +27,5 @@ public class LibraryView {
         // print out the checked in books to verify that it was successfully checked in.
     }
 
-//    public checkOutBook()
+//    public checkOutBook(}
 }

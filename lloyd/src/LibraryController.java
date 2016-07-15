@@ -22,10 +22,10 @@ public class LibraryController {
         return libraryModel.getBooks().size();
     }
 
-    public ArrayList getBookTitles(){
-        return libraryModel.getBookTitles().title; // I think this is the general idea. How do I return the friggin' titles here?
-        // Is this even on the right track?
-    }
+//    public ArrayList getBookTitles(){
+//        return libraryModel.getBookTitles().title; // I think this is the general idea. How do I return the friggin' titles here?
+//        // Is this even on the right track?
+//    }
 
     // Is this the direction I should go when checking books in and out?
     public LibraryBook checkOutBook(LibraryBook book){

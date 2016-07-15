@@ -19,7 +19,16 @@ public class LibraryBook {
         this.isCheckedIn = isCheckedIn;
     }
 
+    public String getTitle() {
+        return title;
+    }
+
     public LibraryBook(){
         // Do I need a default constructor of LibraryBook in order to make an ArrayList of Books initially?
+    }
+
+    @Override
+    public String toString() {
+        return title;
     }
 }
